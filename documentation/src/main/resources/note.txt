@@ -1,0 +1,10 @@
+依据CloudSim源代码介绍几个核心类：
+(1)Cloudlet类：构建云环境下的任务。
+(2)DataCenter类：数据中心，提供虚拟化的网格资源，处理虚拟机信息的查询，包含虚拟机对资源的分配策略，云计算采用VMProvisioner处理虚拟机。
+(3)DataCenterBroker类：隐藏了虚拟机的管理，如创建、任务提交、虚拟机的销毁等。
+(4)Host类：扩展了机器对虚拟机除处理单元(PE)之外的参数分配策略，如带宽、存储空间、内存等，一台Host可对应多台虚拟机。
+(5)VirtualMachine类：虚拟机类，运行在Host上，与其它虚拟机共享资源，每台虚拟机由一个拥有者所有，可提交任务，并由VMScheduler类定制该虚拟机的调度策略。
+(6)VMScheduler类：虚拟机的调度策略，用来管理执行任务，实现了任务接口。
+(7)VMCharacteristics类：提供虚拟机描述。
+(8)VMMAllocationPolicy类：虚拟机监视器策略类，描述同一Host上的多台虚拟机共享资源的策略。
+(9)VMProvisioner类：实现数据中心的主机到虚拟机的映射。
